@@ -286,4 +286,11 @@ def search():
     return render_template('search.html', articles=matched[:10], q=q)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=int(os.getenv('PORT', 5000)))
+    import os
+
+    port = int(os.getenv('PORT', 5000))  # Local fallback for testing
+    debug = bool(os.getenv('DEBUG', True))  # Optional: use env var for debug
+
+    app.run(host='0.0.0.0', port=port, debug=debug)
+
+
