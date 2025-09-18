@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-8">
+    <h2 class="mb-4">Top local stories — <span class="text-primary">Jamshedpur</span></h2>
+    <p class="text-muted">Only the three most popular items are shown. Click any to read full details.</p>
+    {% for article in articles %}
+    <div class="card mb-4 news-card">
+      {% if article.image %}
+      <img src="{{ article.image }}" class="card-img-top" alt="news image">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="{{ url_for('article', index=loop.index0) }}" class="text-decoration-none text-dark">
+            {{ article.title }}
+          </a>
+        </h5>
+        <p class="text-muted small">{{ article.source }} • {{ article.publishedFormatted }}</p>
+        <p class="card-text">{{ article.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="col-lg-4">
+    <div class="hero-box p-4 border rounded text-center bg-light">
+      <i class="plane bi bi-send-fill fs-2 text-primary"></i>
+      <h4 class="fw-bold mt-2">Hover to send the news flying ✈️</h4>
+      <p class="mt-2 small">Stay updated with Jamshedpur’s latest stories.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+

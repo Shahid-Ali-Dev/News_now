@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="card shadow p-4">
+    {% if article.image %}
+    <img src="{{ article.image }}" class="card-img-top mb-4" alt="news image">
+    {% endif %}
+    <h2>{{ article.title }}</h2>
+    <p class="text-muted">{{ article.source }} • {{ article.publishedFormatted }}</p>
+    <p>{{ article.content or article.description }}</p>
+    <a href="{{ article.url }}" target="_blank" class="btn btn-primary mt-3">Read Original Source</a>
+  </div>
+{% endblock %}
