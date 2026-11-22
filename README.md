@@ -1,4 +1,6 @@
-# 📰 NewsNow – Smart News Aggregator (https://news-now-ab0b.onrender.com)
+# 📰 NewsNow – Smart News Aggregator
+
+Link: https://news-now-ab0b.onrender.com
 
 NewsNow is a **Flask-based news aggregator** that fetches and displays the latest headlines from multiple sources:
 - [NewsAPI](https://newsapi.org/)
